@@ -16,7 +16,7 @@ export default function App() {
           tabBarIcon: ({focused, color, size}) => {
             let iconName;
 
-            if (route.name === '首页') {
+            if (route.name === '主页') {
               iconName = focused ? 'home' : 'home-outline';
             } else if (route.name === '设置') {
               iconName = focused ? 'settings' : 'settings-outline';
@@ -27,7 +27,7 @@ export default function App() {
           },
           headerShown: false,
         })}>
-        <Tab.Screen name="首页" component={HomeScreen} />
+        <Tab.Screen name="主页" component={HomeScreen} />
         <Tab.Screen name="设置" component={SettingsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
