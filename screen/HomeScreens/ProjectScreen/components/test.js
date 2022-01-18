@@ -1,17 +1,15 @@
 import React from 'react';
-import {StyleSheet, FlatList} from 'react-native';
+import {StyleSheet, FlatList, Text, View} from 'react-native';
 import {ListItem, Icon, ListItemProps, Button} from 'react-native-elements';
+import {ProjectScreenCss} from '../../../../style/HomeScreens/ProjectScreen';
 
-const log = () => console.log('this is an example method');
-
-type List1Data = {
-  title: string,
-  icon: string,
-};
-const list1: List1Data[] = [
+const list1 = [
   {
-    title: 'Appointments',
-    icon: 'av-timer',
+    title: '测试项目',
+    introduction: '测试数据用',
+    icon: 'folder-outline',
+    iconType: 'ionicon',
+    color: '#0087ff',
   },
   {
     title: 'Trips',
@@ -30,29 +28,48 @@ const list1: List1Data[] = [
     icon: 'track-changes',
   },
 ];
-type ListComponentProps = ListItemProps;
 
-const Lists2: React.FunctionComponent<ListComponentProps> = () => {
-  const renderRow = ({item}: {item: List1Data}) => {
-    return (
-      <ListItem.Swipeable onPress={log} bottomDivider>
-        <Icon name={item.icon} />
-        <ListItem.Content>
-          <ListItem.Title>{item.title}</ListItem.Title>
-        </ListItem.Content>
-        <ListItem.Chevron />
-      </ListItem.Swipeable>
-    );
-  };
+const MyListItem = (item, index) => {
+  const [expanded, setExpanded] = React.useState(false);
+  return (
+    <ListItem.Accordion
+      style={{borderBottom: 'thick dotted #ff0000'}}
+      content={
+        <>
+          <Icon
+            name={item.icon}
+            type={item.iconType}
+            color={item.color}
+            style={ProjectScreenCss.icon}
+          />
+          <ListItem.Content>
+            <ListItem.Title style={{color: 'red'}}>{item.title}</ListItem.Title>
+            <ListItem.Subtitle>
+              {item.introduction ?? '暂无简介，请添加'}
+            </ListItem.Subtitle>
+          </ListItem.Content>
+          <ListItem.Content right>
+            <ListItem.Title right style={{color: 'green', fontSize: 14}}>
+              进度{item.introduction}
+            </ListItem.Title>
+            <ListItem.Subtitle right>完成度</ListItem.Subtitle>
+          </ListItem.Content>
+        </>
+      }
+      key={index}
+      isExpanded={expanded}
+      onPress={() => {
+        setExpanded(!expanded);
+      }}>
+      <Text>123</Text>
+    </ListItem.Accordion>
+  );
+};
+
+const Lists2 = () => {
   return (
     <>
-      <FlatList
-        // scrollEnabled={false}
-        style={styles.container}
-        data={list1}
-        keyExtractor={(a: List1Data, index: number) => index.toString()}
-        renderItem={renderRow}
-      />
+      <View>{list1.map(MyListItem)}</View>
     </>
   );
 };

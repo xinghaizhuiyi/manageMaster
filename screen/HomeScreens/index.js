@@ -5,7 +5,7 @@ import ProjectScreen from './ProjectScreen';
 
 const Tab = createMaterialTopTabNavigator();
 
-function HomeScreen() {
+function HomeScreens() {
   return (
     <SafeAreaView style={{flex: 1}}>
       <Tab.Navigator>
@@ -15,4 +15,4 @@ function HomeScreen() {
     </SafeAreaView>
   );
 }
-export default HomeScreen;
+export default HomeScreens;
