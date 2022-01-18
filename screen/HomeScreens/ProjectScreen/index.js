@@ -2,7 +2,7 @@ import * as React from 'react';
 import {SafeAreaView, Text, View} from 'react-native';
 import Test from './components/test';
 
-function HomeScreen({navigation}) {
+function ProjectScreen({navigation}) {
   return (
     <SafeAreaView style={{flex: 1}}>
       <Test />
@@ -11,4 +11,4 @@ function HomeScreen({navigation}) {
   );
 }
 
-export default HomeScreen;
+export default ProjectScreen;

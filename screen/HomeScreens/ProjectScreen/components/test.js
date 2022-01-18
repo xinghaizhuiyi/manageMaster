@@ -35,23 +35,7 @@ type ListComponentProps = ListItemProps;
 const Lists2: React.FunctionComponent<ListComponentProps> = () => {
   const renderRow = ({item}: {item: List1Data}) => {
     return (
-      <ListItem.Swipeable
-        onPress={log}
-        bottomDivider
-        leftContent={
-          <Button
-            title="简介"
-            icon={{name: 'info', color: 'white'}}
-            buttonStyle={{minHeight: '100%'}}
-          />
-        }
-        rightContent={
-          <Button
-            title="删除"
-            icon={{name: 'delete', color: 'white'}}
-            buttonStyle={{minHeight: '100%', backgroundColor: 'red'}}
-          />
-        }>
+      <ListItem.Swipeable onPress={log} bottomDivider>
         <Icon name={item.icon} />
         <ListItem.Content>
           <ListItem.Title>{item.title}</ListItem.Title>

@@ -2,7 +2,7 @@ import * as React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-import HomeScreen from './screen/HomeScreens/HomeScreen';
+import HomeScreen from './screen/HomeScreens';
 import SettingsScreen from './screen/SettingsScreens/SettingsScreen';
 import storage from './storage/storage';
 global.Storage = storage;
