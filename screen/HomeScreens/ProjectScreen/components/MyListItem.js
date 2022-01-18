@@ -1,7 +1,9 @@
 import React from 'react';
-import {StyleSheet, FlatList, Text, View} from 'react-native';
-import {ListItem, Icon, ListItemProps, Button} from 'react-native-elements';
-import {ProjectScreenCss} from '../../../../style/HomeScreens/ProjectScreen';
+import {StyleSheet, Text, View} from 'react-native';
+import {ListItem, Icon} from 'react-native-elements';
+import {
+  MyListItemCss,
+} from '../../../../style/HomeScreens/ProjectScreen';
 
 const list1 = [
   {
@@ -33,14 +35,14 @@ const MyListItem = (item, index) => {
   const [expanded, setExpanded] = React.useState(false);
   return (
     <ListItem.Accordion
-      style={{borderBottom: 'thick dotted #ff0000'}}
+      style={MyListItemCss.ListItem}
       content={
         <>
           <Icon
             name={item.icon}
             type={item.iconType}
             color={item.color}
-            style={ProjectScreenCss.icon}
+            style={MyListItemCss.icon}
           />
           <ListItem.Content>
             <ListItem.Title style={{color: 'red'}}>{item.title}</ListItem.Title>
@@ -50,9 +52,10 @@ const MyListItem = (item, index) => {
           </ListItem.Content>
           <ListItem.Content right>
             <ListItem.Title right style={{color: 'green', fontSize: 14}}>
-              进度{item.introduction}
+              进度:良好
+              {/*{item.introduction}*/}
             </ListItem.Title>
-            <ListItem.Subtitle right>完成度</ListItem.Subtitle>
+            <ListItem.Subtitle right>完成度：0%</ListItem.Subtitle>
           </ListItem.Content>
         </>
       }
@@ -61,7 +64,9 @@ const MyListItem = (item, index) => {
       onPress={() => {
         setExpanded(!expanded);
       }}>
-      <Text>123</Text>
+      <View style={MyListItemCss.ListItemInner}>
+        <Text>123</Text>
+      </View>
     </ListItem.Accordion>
   );
 };

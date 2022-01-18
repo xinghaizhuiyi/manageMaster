@@ -2,26 +2,18 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 
 export const ProjectScreenCss = StyleSheet.create({
-  container: {
-    marginTop: 50,
+
+});
+export const MyListItemCss = StyleSheet.create({
+  ListItem: {
+    borderBottomWidth: 1,
+    borderStyle: 'solid',
+    borderColor: 'rgba(0,0,0,0.25)',
+  },
+  ListItemInner:{
+
   },
   icon: {
     marginRight: 8,
-  },
-  red: {
-    color: 'red',
-  },
-});
-export const MyListItem = StyleSheet.create({
-  container: {
-    marginTop: 50,
-  },
-  bigBlue: {
-    color: 'blue',
-    fontWeight: 'bold',
-    fontSize: 30,
-  },
-  red: {
-    color: 'red',
   },
 });
