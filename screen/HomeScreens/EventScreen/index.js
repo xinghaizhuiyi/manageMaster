@@ -1,15 +1,15 @@
 import * as React from 'react';
 import {SafeAreaView, Text, View} from 'react-native';
 import Test from './components/MyListItem';
-import SpeedDial from './components/SpeedDial';
+import BottomButton from './components/BottomButton';
 
-function ProjectScreen({navigation}) {
+function EventScreen({navigation}) {
   return (
     <SafeAreaView style={{flex: 1}}>
       <Test />
-      <SpeedDial />
+      <BottomButton />
     </SafeAreaView>
   );
 }
 
-export default ProjectScreen;
+export default EventScreen;

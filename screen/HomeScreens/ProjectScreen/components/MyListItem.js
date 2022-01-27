@@ -1,9 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {ListItem, Icon} from 'react-native-elements';
-import {
-  MyListItemCss,
-} from '../../../../style/HomeScreens/ProjectScreen';
+import {MyListItemCss} from '../../../../style/HomeScreens/ProjectScreen';
 
 const list1 = [
   {
